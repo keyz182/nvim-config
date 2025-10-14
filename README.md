@@ -1,217 +1,140 @@
-<div align="center">
-<p>
-    <a>
-      <img alt="Linux" src="https://img.shields.io/badge/Linux-%23.svg?style=flat-square&logo=linux&color=FCC624&logoColor=black" />
-    </a>
-    <a>
-      <img alt="macOS" src="https://img.shields.io/badge/macOS-%23.svg?style=flat-square&logo=apple&color=000000&logoColor=white" />
-    </a>
-    <a>
-      <img alt="Windows" src="https://img.shields.io/badge/Windows-%23.svg?style=flat-square&logo=windows&color=0078D6&logoColor=white" />
-    </a>
-    <a href="https://github.com/neovim/neovim/releases/tag/stable">
-      <img src="https://img.shields.io/badge/Neovim-0.11.4-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=green" alt="Neovim minimum version"/>
-    </a>
-    <a href="https://github.com/jdhao/nvim-config/search?l=vim-script">
-      <img src="https://img.shields.io/github/languages/top/jdhao/nvim-config" alt="Top languages"/>
-    </a>
-    <a href="https://github.com/jdhao/nvim-config/graphs/commit-activity">
-      <img src="https://img.shields.io/github/commit-activity/m/jdhao/nvim-config?style=flat-square" />
-    </a>
-    <a href="https://github.com/jdhao/nvim-config/graphs/contributors">
-      <img src="https://img.shields.io/github/contributors/jdhao/nvim-config?style=flat-square" />
-    </a>
-    <a>
-      <img src="https://img.shields.io/github/repo-size/jdhao/nvim-config?style=flat-square" />
-    </a>
-    <a href="https://github.com/jdhao/nvim-config/blob/master/LICENSE">
-      <img src="https://img.shields.io/github/license/jdhao/nvim-config?style=flat-square&logo=GNU&label=License" alt="License"/>
-    </a>
-    <a href="https://deepwiki.com/jdhao/nvim-config">
-      <img src="https://deepwiki.com/badge.svg" alt="deepwiki"/>
-    </a>
-</p>
-</div>
+# nvim-config/
 
-# Introduction
+<a href="https://dotfyle.com/keyz182/nvim-config"><img src="https://dotfyle.com/keyz182/nvim-config/badges/plugins?style=flat" /></a>
+<a href="https://dotfyle.com/keyz182/nvim-config"><img src="https://dotfyle.com/keyz182/nvim-config/badges/leaderkey?style=flat" /></a>
+<a href="https://dotfyle.com/keyz182/nvim-config"><img src="https://dotfyle.com/keyz182/nvim-config/badges/plugin-manager?style=flat" /></a>
 
-This repo hosts my Nvim configuration for Linux, macOS, and Windows.
-`init.lua` is the config entry point for terminal Nvim,
-and `ginit.vim` is the additional config file for [GUI client of Nvim](https://github.com/neovim/neovim/wiki/Related-projects#gui).
 
-My configurations are heavily documented to make it as clear as possible.
-While you can clone the whole repository and use it, it is not recommended though.
-Good configurations are personal. Everyone should have his or her unique config file.
-You are encouraged to copy from this repo the part you want and add it to your own config.
+## Install Instructions
 
-To reduce the possibility of breakage, **this config is only maintained for [the latest nvim stable release](https://github.com/neovim/neovim/releases/tag/stable).
-No effort is spent on maintaining backward compatibility.**
+ > Install requires Neovim 0.9+. Always review the code before installing a configuration.
 
-# Install and setup
+Clone the repository and install the plugins:
 
-See [doc here](docs/README.md) on how to install Nvim's dependencies, Nvim itself,
-and how to set up on different platforms (Linux, macOS, and Windows).
+```sh
+git clone git@github.com:keyz182/nvim-config ~/.config/keyz182/nvim-config
+```
 
-# Features #
+Open Neovim with this config:
 
-+ Plugin management via [Lazy.nvim](https://github.com/folke/lazy.nvim).
-+ Code, snippet, word auto-completion via [nvim-cmp](https://github.com/hrsh7th/nvim-cmp).
-+ Language server protocol (LSP) support via [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
-+ Git integration via [vim-fugitive](https://github.com/tpope/vim-fugitive).
-+ Better escaping from insert mode via [better-escape.vim](https://github.com/nvim-zh/better-escape.vim).
-+ Ultra-fast project-wide fuzzy searching via [fzf-lua](https://github.com/ibhagwan/fzf-lua).
-+ Faster code commenting via [vim-commentary](https://github.com/tpope/vim-commentary).
-+ Faster matching pair insertion and jump via [nvim-autopairs](https://github.com/windwp/nvim-autopairs).
-+ Smarter and faster matching pair management (add, replace or delete) via [vim-sandwich](https://github.com/machakann/vim-sandwich).
-+ Fast buffer jump via [hop.nvim](https://github.com/phaazon/hop.nvim).
-+ Powerful snippet insertion via [Ultisnips](https://github.com/SirVer/ultisnips).
-+ Beautiful statusline via [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim).
-+ File tree explorer via [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua).
-+ Better quickfix list with [nvim-bqf](https://github.com/kevinhwang91/nvim-bqf).
-+ Show search index and count with [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens).
-+ User-defined mapping hint via [which-key.nvim](https://github.com/folke/which-key.nvim).
-+ Asynchronous code execution via [asyncrun.vim](https://github.com/skywind3000/asyncrun.vim).
-+ Code highlighting via [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
-+ Code editing using true nvim inside browser via [firenvim](https://github.com/glacambre/firenvim).
-+ Beautiful colorscheme via [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material) and other colorschemes.
-+ Markdown writing and previewing via [vim-markdown](https://github.com/preservim/vim-markdown) and [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim).
-+ LaTeX editing and previewing via [vimtex](https://github.com/lervag/vimtex)
-+ Animated GUI style notification via [nvim-notify](https://github.com/rcarriga/nvim-notify).
-+ Tags navigation via [vista](https://github.com/liuchengxu/vista.vim).
-+ Undo management via [vim-mundo](https://github.com/simnalamburt/vim-mundo)
-+ Code folding with [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo) and [statuscol.nvim](https://github.com/luukvbaal/statuscol.nvim)
-+ ......
+```sh
+NVIM_APPNAME=keyz182/nvim-config/ nvim
+```
 
-# UI Demo
+## Plugins
 
-For more UI demos, check [here](https://github.com/jdhao/nvim-config/issues/15).
+### ai
 
-## Start screen with dashboard-nvim
++ [CopilotC-Nvim/CopilotChat.nvim](https://dotfyle.com/plugins/CopilotC-Nvim/CopilotChat.nvim)
+### bars-and-lines
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/16662357/183256752-fb23b215-a6b8-4646-beed-9999f52d53f1.png" width="800">
-</p>
++ [luukvbaal/statuscol.nvim](https://dotfyle.com/plugins/luukvbaal/statuscol.nvim)
++ [Bekaboo/dropbar.nvim](https://dotfyle.com/plugins/Bekaboo/dropbar.nvim)
+### color
 
-## File fuzzy finding using fzf-lua
++ [catgoose/nvim-colorizer.lua](https://dotfyle.com/plugins/catgoose/nvim-colorizer.lua)
+### colorscheme
 
-<p align="center">
-<img src="https://github.com/user-attachments/assets/3199e35d-121a-487b-bfd1-58eb69b0b48a" width="800">
-</p>
++ [marko-cerovac/material.nvim](https://dotfyle.com/plugins/marko-cerovac/material.nvim)
++ [sainnhe/sonokai](https://dotfyle.com/plugins/sainnhe/sonokai)
++ [sainnhe/edge](https://dotfyle.com/plugins/sainnhe/edge)
++ [savq/melange-nvim](https://dotfyle.com/plugins/savq/melange-nvim)
++ [sainnhe/everforest](https://dotfyle.com/plugins/sainnhe/everforest)
++ [sainnhe/gruvbox-material](https://dotfyle.com/plugins/sainnhe/gruvbox-material)
++ [navarasu/onedark.nvim](https://dotfyle.com/plugins/navarasu/onedark.nvim)
++ [projekt0n/github-nvim-theme](https://dotfyle.com/plugins/projekt0n/github-nvim-theme)
++ [catppuccin/nvim](https://dotfyle.com/plugins/catppuccin/nvim)
++ [EdenEast/nightfox.nvim](https://dotfyle.com/plugins/EdenEast/nightfox.nvim)
++ [olimorris/onedarkpro.nvim](https://dotfyle.com/plugins/olimorris/onedarkpro.nvim)
++ [rebelot/kanagawa.nvim](https://dotfyle.com/plugins/rebelot/kanagawa.nvim)
++ [rockyzhang24/arctic.nvim](https://dotfyle.com/plugins/rockyzhang24/arctic.nvim)
++ [zootedb0t/citruszest.nvim](https://dotfyle.com/plugins/zootedb0t/citruszest.nvim)
++ [miikanissi/modus-themes.nvim](https://dotfyle.com/plugins/miikanissi/modus-themes.nvim)
++ [ficcdaf/ashen.nvim](https://dotfyle.com/plugins/ficcdaf/ashen.nvim)
++ [wtfox/jellybeans.nvim](https://dotfyle.com/plugins/wtfox/jellybeans.nvim)
+### colorscheme-creation
 
-## Code autocompletion with nvim-cmp
++ [rktjmp/lush.nvim](https://dotfyle.com/plugins/rktjmp/lush.nvim)
+### completion
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/16662357/128590006-0fc1451f-fac1-49b2-bb95-8aba21bfa44e.gif" width="800">
-</p>
++ [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
++ [zbirenbaum/copilot.lua](https://dotfyle.com/plugins/zbirenbaum/copilot.lua)
+### debugging
 
-## Git add, commit and push via fugitive.vim
++ [sakhnik/nvim-gdb](https://dotfyle.com/plugins/sakhnik/nvim-gdb)
+### editing-support
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/16662357/128590833-aaa05d53-19ef-441d-a5a9-ba1bbd3936c1.gif" width="800">
-</p>
++ [windwp/nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
++ [smjonas/live-command.nvim](https://dotfyle.com/plugins/smjonas/live-command.nvim)
++ [gbprod/yanky.nvim](https://dotfyle.com/plugins/gbprod/yanky.nvim)
++ [folke/snacks.nvim](https://dotfyle.com/plugins/folke/snacks.nvim)
+### file-explorer
 
-## Tags
++ [nvim-tree/nvim-tree.lua](https://dotfyle.com/plugins/nvim-tree/nvim-tree.lua)
+### fuzzy-finder
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/16662357/128589584-4036a1a2-2e0a-4bbe-8aaf-ff8b91644648.jpg" width="800">
-</p>
++ [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
++ [ibhagwan/fzf-lua](https://dotfyle.com/plugins/ibhagwan/fzf-lua)
+### git
 
-## Cursor jump via hop.nvim
++ [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
++ [ruifm/gitlinker.nvim](https://dotfyle.com/plugins/ruifm/gitlinker.nvim)
++ [sindrets/diffview.nvim](https://dotfyle.com/plugins/sindrets/diffview.nvim)
++ [akinsho/git-conflict.nvim](https://dotfyle.com/plugins/akinsho/git-conflict.nvim)
++ [NeogitOrg/neogit](https://dotfyle.com/plugins/NeogitOrg/neogit)
+### keybinding
 
-Go to a string starting with `se`
++ [folke/which-key.nvim](https://dotfyle.com/plugins/folke/which-key.nvim)
+### lsp
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/16662357/139459219-8a7e6ac4-1d24-4008-a370-b56773d7cb85.gif" width="800">
-</p>
++ [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
++ [j-hui/fidget.nvim](https://dotfyle.com/plugins/j-hui/fidget.nvim)
++ [kosayoda/nvim-lightbulb](https://dotfyle.com/plugins/kosayoda/nvim-lightbulb)
+### markdown-and-latex
 
-## GUI-style notification with nvim-notify
++ [iamcco/markdown-preview.nvim](https://dotfyle.com/plugins/iamcco/markdown-preview.nvim)
++ [MeanderingProgrammer/render-markdown.nvim](https://dotfyle.com/plugins/MeanderingProgrammer/render-markdown.nvim)
+### motion
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/16662357/128589873-aadb8264-1098-4834-9876-fa66a309be05.gif" width="800">
-</p>
++ [smoka7/hop.nvim](https://dotfyle.com/plugins/smoka7/hop.nvim)
+### nvim-dev
 
-## code folding with nvim-ufo and statuscol.nvim
++ [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
++ [folke/lazydev.nvim](https://dotfyle.com/plugins/folke/lazydev.nvim)
+### plugin-manager
 
-<p align="center">
-<img src="https://github.com/user-attachments/assets/a01a56b2-7c91-43de-b305-f2fbaa81dcec" width="800">
-</p>
++ [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
+### quickfix
 
-# Shortcuts
++ [kevinhwang91/nvim-bqf](https://dotfyle.com/plugins/kevinhwang91/nvim-bqf)
++ [stevearc/quicker.nvim](https://dotfyle.com/plugins/stevearc/quicker.nvim)
+### search
 
-Some of the shortcuts I use frequently are listed here. In the following shortcuts, `<leader>` represents ASCII character `,`.
++ [kevinhwang91/nvim-hlslens](https://dotfyle.com/plugins/kevinhwang91/nvim-hlslens)
+### snippet
 
-| Shortcut          | Mode          | platform        | Description                                                              |
-|-------------------|---------------|-----------------|--------------------------------------------------------------------------|
-| `<leader>ff`      | Normal        | Linux/macOS/Win | Fuzzy file searching in a floating window                                |
-| `<leader>fh`      | Normal        | Linux/macOS/Win | Fuzzy help file grepping in a floating window                            |
-| `<leader>fg`      | Normal        | Linux/macOS/Win | Fuzzy project-wide grepping in a floating window                         |
-| `<leader>ft`      | Normal        | Linux/macOS/Win | Fuzzy buffer tag searching in a floating window                          |
-| `<leader>fb`      | Normal        | Linux/macOS/Win | Fuzzy buffer switching in a floating window                              |
-| `<leader><Space>` | Normal        | Linux/macOS/Win | Remove trailing white spaces                                             |
-| `<leader>v`       | Normal        | Linux/macOS/Win | Reselect last pasted text                                                |
-| `<leader>ev`      | Normal        | Linux/macOS/Win | Edit Nvim config in a new tabpage                                        |
-| `<leader>sv`      | Normal        | Linux/macOS/Win | Reload Nvim config                                                       |
-| `<leader>st`      | Normal        | Linux/macOS/Win | Show highlight group for cursor text                                     |
-| `<leader>q`       | Normal        | Linux/macOS/Win | Quit current window                                                      |
-| `<leader>Q`       | Normal        | Linux/macOS/Win | Quit all window and close Nvim                                           |
-| `<leader>w`       | Normal        | Linux/macOS/Win | Save current buffer content                                              |
-| `<leader>y`       | Normal        | Linux/macOS/Win | Copy the content of entire buffer to default register                    |
-| `<leader>cl`      | Normal        | Linux/macOS/Win | Toggle cursor column                                                     |
-| `<leader>cd`      | Normal        | Linux/macOS/Win | Change current working directory to to the dir of current buffer         |
-| `<space>t`        | Normal        | Linux/macOS/Win | Toggle tag window (show project tags in the right window)                |
-| `<leader>gs`      | Normal        | Linux/macOS/Win | Show Git status result                                                   |
-| `<leader>gw`      | Normal        | Linux/macOS/Win | Run Git add for current file                                             |
-| `<leader>gc`      | Normal        | Linux/macOS/Win | Run git commit                                                           |
-| `<leader>gpl`     | Normal        | Linux/macOS/Win | Run git pull                                                             |
-| `<leader>gpu`     | Normal        | Linux/macOS/Win | Run git push                                                             |
-| `<leader>gbd`     | Normal        | Linux/macOS/Win | Delete a branch                                                          |
-| `<leader>gbn`     | Normal        | Linux/macOS/Win | Create a new branch                                                      |
-| `<leader>gl`      | Normal/Visual | Linux/macOS/Win | Get perm link for current/visually-select lines                          |
-| `<leader>gbr`     | Normal        | macOS           | Browse current git repo in browser                                       |
-| `<leader>gb`      | Visual        | macOS           | Blame current line                                                       |
-| `<F9>`            | Normal        | Linux/macOS/Win | Compile&run current source file (for C++, LaTeX, Lua, Python)            |
-| `<F11>`           | Normal        | Linux/macOS/Win | Toggle spell checking                                                    |
-| `<F12>`           | Normal        | Linux/macOS/Win | Toggle paste mode                                                        |
-| `\x`              | Normal        | Linux/macOS/Win | Close location or quickfix window                                        |
-| `\d`              | Normal        | Linux/macOS/Win | Close current buffer and go to previous buffer                           |
-| `{count}gb`       | Normal        | Linux/macOS/Win | Go to buffer `{count}` or next buffer in the buffer list.                |
-| `{operator}iB`    | Normal        | Linux/macOS/Win | Operate in the whole buffer, `{operator}` can be `v`, `y`, `c`, `d` etc. |
-| `Alt-k`           | Normal        | Linux/macOS/Win | Move current line or selected lines up                                   |
-| `Alt-j`           | Normal        | Linux/macOS/Win | Move current line or selected lines down                                 |
-| `Alt-m`           | Normal        | macOS/Win       | Markdown previewing in system browser                                    |
-| `Alt-Shift-m`     | Normal        | macOS/Win       | Stopping Markdown previewing in system browser                           |
-| `ctrl-u`          | Insert        | Linux/macOS/Win | Turn word under cursor to upper case                                     |
-| `ctrl-t`          | Insert        | Linux/macOS/Win | Turn word under cursor to title case                                     |
-| `jk`              | Insert        | Linux/macOS/Win | Return to Normal mode without lagging                                    |
++ [rafamadriz/friendly-snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
+### startup
 
-# Custom commands
++ [nvimdev/dashboard-nvim](https://dotfyle.com/plugins/nvimdev/dashboard-nvim)
+### statusline
 
-In addition to commands provided by various plugins, I have also created some custom commands for personal use.
++ [nvim-lualine/lualine.nvim](https://dotfyle.com/plugins/nvim-lualine/lualine.nvim)
+### syntax
 
-| command      | description                                                             | example                        |
-|--------------|-------------------------------------------------------------------------|--------------------------------|
-| `Redir`      | capture command output to a tabpage for easier inspection.              | `Redir hi`                     |
-| `Edit`       | edit multiple files at the same time, supports globing                  | `Edit *.vim`                   |
-| `Datetime`   | print current date and time or convert Unix time stamp to date and time | `Datetime 12345` or `Datetime` |
-| `JSONFormat` | format a JSON file                                                      | `JSONFormat`                   |
-| `CopyPath`   | copy current file path to clipboard                                     | `CopyPath relative`            |
++ [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
++ [nvim-treesitter/nvim-treesitter-textobjects](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-textobjects)
+### tabline
 
-# Contributing
++ [akinsho/bufferline.nvim](https://dotfyle.com/plugins/akinsho/bufferline.nvim)
+### utility
 
-If you find anything that needs improving, do not hesitate to point it out or create a PR.
++ [rcarriga/nvim-notify](https://dotfyle.com/plugins/rcarriga/nvim-notify)
++ [kevinhwang91/nvim-ufo](https://dotfyle.com/plugins/kevinhwang91/nvim-ufo)
++ [echasnovski/mini.nvim](https://dotfyle.com/plugins/echasnovski/mini.nvim)
+## Language Servers
 
-If you come across an issue, you can first use `:checkhealth` command provided by `nvim` to trouble-shoot yourself.
-Please read carefully the messages provided by health check.
++ clangd
 
-If you still have an issue, [open a new issue](https://github.com/jdhao/nvim-config/issues).
 
-# Further readings
-
-Some of the resources that I find helpful in mastering Nvim is documented [here](docs/nvim_resources.md).
-You may also be interested in my posts on configuring Nvim:
-
-+ My nvim notes can be found [here](https://jdhao.github.io/categories/Nvim/)
-+ [Using Neovim for Three years](https://jdhao.github.io/2021/12/31/using_nvim_after_three_years/)
-+ [Config nvim on Linux for Python development](https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/)
-+ [Nvim config on Windows 10](https://jdhao.github.io/2018/11/15/neovim_configuration_windows/)
-+ [Nvim-qt config on Windows 10](https://jdhao.github.io/2019/01/17/nvim_qt_settings_on_windows/)
+ This readme was generated by [Dotfyle](https://dotfyle.com)
