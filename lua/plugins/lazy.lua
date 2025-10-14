@@ -10,6 +10,16 @@ return {
         -- refer to the configuration section below
       },
       picker = {
+        buffers = {
+          hidden = true,
+        },
+        files = {
+            hidden = true,
+            ignored = true,
+        },
+        git_branches ={
+          all = true
+        },
         sources = {
           explorer = {
             -- your explorer picker configuration comes here
