@@ -14,21 +14,24 @@ return {
           hidden = true,
         },
         files = {
-            hidden = true,
-            ignored = true,
+          hidden = true,
+          ignored = true,
         },
-        git_branches ={
-          all = true
+        git_branches = {
+          all = true,
         },
         sources = {
           explorer = {
             -- your explorer picker configuration comes here
             -- or leave it empty to use the default settings
-          }
-        }
-      }
-    }
+          },
+        },
+      },
+    },
   },
+
+  -- add gruvbox
+  { "ellisonleao/gruvbox.nvim" },
 
   -- Configure LazyVim to load gruvbox
   {
@@ -37,8 +40,6 @@ return {
       colorscheme = "gruvbox",
     },
   },
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
 
   -- change trouble config
   {
@@ -80,19 +81,6 @@ return {
     },
   },
 
-  -- add pyright to lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
-        pyright = {},
-      },
-    },
-  },
-
   -- add tsserver and setup with typescript.nvim instead of lspconfig
   {
     "neovim/nvim-lspconfig",
@@ -112,6 +100,7 @@ return {
       servers = {
         -- tsserver will be automatically installed with mason and loaded with lspconfig
         tsserver = {},
+        ruff = {},
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
@@ -128,11 +117,16 @@ return {
     },
   },
 
-  -- add more treesitter parsers
+  -- since `vim.tbl_deep_extend`, can only merge tables and not lists, the code above
+  -- would overwrite `ensure_installed` with the new value.
+  -- If you'd rather extend the default config, use the code below instead:
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
+    opts = function(_, opts)
+      -- add tsx and treesitter
+      vim.list_extend(opts.ensure_installed, {
+        "tsx",
+        "typescript",
         "bash",
         "html",
         "javascript",
@@ -147,37 +141,9 @@ return {
         "typescript",
         "vim",
         "yaml",
-      },
-    },
-  },
-
-  -- since `vim.tbl_deep_extend`, can only merge tables and not lists, the code above
-  -- would overwrite `ensure_installed` with the new value.
-  -- If you'd rather extend the default config, use the code below instead:
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      -- add tsx and treesitter
-      vim.list_extend(opts.ensure_installed, {
-        "tsx",
-        "typescript",
       })
     end,
   },
-
-  -- the opts function can also be used to change the default opts:
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, {
-        function()
-          return "😄"
-        end,
-      })
-    end,
-  },
-
 
   -- add any tools you want to have installed below
   {
@@ -190,5 +156,11 @@ return {
         "flake8",
       },
     },
+  },
+  {
+    "alex-popov-tech/store.nvim",
+    dependencies = { "OXY2DEV/markview.nvim" },
+    opts = {},
+    cmd = "Store",
   },
 }
